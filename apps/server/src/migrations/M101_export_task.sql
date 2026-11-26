@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS `export_task` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `tenant_id` BIGINT NOT NULL,
+  `code` VARCHAR(64) NOT NULL,
+  `biz_type` VARCHAR(64) NULL,
+  `status` VARCHAR(20) NOT NULL DEFAULT 'PENDING',
+  `params` JSON NULL,
+  `file_name` VARCHAR(200) NULL,
+  `content` LONGTEXT NULL,
+  `row_count` INT NOT NULL DEFAULT 0,
+  `result_url` VARCHAR(500) NULL,
+  `error_message` VARCHAR(1000) NULL,
+  `queue_job_id` VARCHAR(64) NULL,
+  `created_by` BIGINT NULL,
+  `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+  `started_at` DATETIME(3) NULL,
+  `finished_at` DATETIME(3) NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_export_task_tenant` (`tenant_id`, `id`),
+  KEY `idx_export_task_status` (`tenant_id`, `status`, `id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

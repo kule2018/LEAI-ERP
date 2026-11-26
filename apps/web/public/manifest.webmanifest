@@ -1,0 +1,18 @@
+{
+  "name": "LEAI ERP",
+  "short_name": "LEAI ERP",
+  "description": "企业资源计划移动工作台",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#12161f",
+  "theme_color": "#1677ff",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

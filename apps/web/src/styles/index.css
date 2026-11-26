@@ -1,0 +1,69 @@
+:root {
+  --erp-color-primary: #1677ff;
+  --erp-color-sidebar: #12161f;
+  --erp-color-sidebar-hover: #1d2430;
+  --erp-color-bg: #f5f7fa;
+  --erp-color-text: #1f2329;
+  --erp-color-secondary: #646a73;
+  --erp-radius-base: 8px;
+  --erp-space-1: 4px;
+  --erp-space-2: 8px;
+  --erp-space-3: 12px;
+  --erp-space-4: 16px;
+  --erp-space-6: 24px;
+  --erp-space-8: 32px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--erp-color-bg);
+  color: var(--erp-color-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+.page-container {
+  padding: var(--erp-space-4);
+}
+
+.page-header {
+  margin-bottom: var(--erp-space-4);
+}
+
+.page-header h2 {
+  margin: 0 0 var(--erp-space-2);
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--erp-color-secondary);
+  line-height: 22px;
+}
+
+.full-page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--erp-color-bg);
+}

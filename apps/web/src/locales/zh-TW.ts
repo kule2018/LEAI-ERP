@@ -1,0 +1,31 @@
+import enUS from './en-US'
+
+export default {
+  ...enUS,
+  'common.action.confirm': '確認',
+  'common.action.cancel': '取消',
+  'common.action.save': '儲存',
+  'common.action.export': '匯出',
+  'common.action.import': '匯入',
+  'common.action.search': '查詢',
+  'common.action.refresh': '重新整理',
+  'common.action.create': '新增',
+  'common.action.delete': '刪除',
+  'common.action.edit': '編輯',
+  'common.action.submit': '提交',
+  'common.action.approve': '審核',
+  'common.action.close': '關閉',
+  'common.action.logout': '登出',
+  'common.state.success': '操作成功',
+  'common.state.failed': '操作失敗',
+  'common.state.loading': '載入中',
+  'common.state.empty': '暫無資料',
+  'nav.dashboard': '工作台',
+  'nav.sales.order': '銷售訂單',
+  'nav.purchase.order': '採購訂單',
+  'nav.inventory.stock': '庫存查詢',
+  'nav.finance.report': '財務報表',
+  'nav.system.dict': '資料字典',
+  'nav.system.user': '用戶管理',
+  'nav.system.role': '角色權限'
+}

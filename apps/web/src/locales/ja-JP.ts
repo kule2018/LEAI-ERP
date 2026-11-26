@@ -1,0 +1,31 @@
+import enUS from './en-US'
+
+export default {
+  ...enUS,
+  'common.action.confirm': '確認',
+  'common.action.cancel': 'キャンセル',
+  'common.action.save': '保存',
+  'common.action.export': 'エクスポート',
+  'common.action.import': 'インポート',
+  'common.action.search': '検索',
+  'common.action.refresh': '更新',
+  'common.action.create': '追加',
+  'common.action.delete': '削除',
+  'common.action.edit': '編集',
+  'common.action.submit': '送信',
+  'common.action.approve': '承認',
+  'common.action.close': '閉じる',
+  'common.action.logout': 'ログアウト',
+  'common.state.success': '操作が成功しました',
+  'common.state.failed': '操作に失敗しました',
+  'common.state.loading': '読み込み中',
+  'common.state.empty': 'データがありません',
+  'nav.dashboard': 'ダッシュボード',
+  'nav.sales.order': '販売注文',
+  'nav.purchase.order': '購買注文',
+  'nav.inventory.stock': '在庫照会',
+  'nav.finance.report': '財務レポート',
+  'nav.system.dict': 'データ辞書',
+  'nav.system.user': 'ユーザー管理',
+  'nav.system.role': 'ロール権限'
+}

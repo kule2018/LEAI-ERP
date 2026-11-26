@@ -1,0 +1,92 @@
+- generic [ref=f25e3]:
+  - complementary [ref=f25e4]:
+    - generic [ref=f25e5]: LEAIerp
+    - navigation "主导航" [ref=f25e6]:
+      - generic [ref=f25e7]:
+        - heading "基础模块" [level=2] [ref=f25e8]
+        - link "Dashboard" [ref=f25e9] [cursor=pointer]:
+          - /url: /dashboard/board
+        - link "用户" [ref=f25e12] [cursor=pointer]:
+          - /url: /system/user
+        - link "部门" [ref=f25e15] [cursor=pointer]:
+          - /url: /system/dept
+        - link "角色" [ref=f25e18] [cursor=pointer]:
+          - /url: /system/role
+        - link "权限" [ref=f25e21] [cursor=pointer]:
+          - /url: /system/perm
+        - link "字典" [ref=f25e24] [cursor=pointer]:
+          - /url: /system/dict
+        - link "日志" [ref=f25e27] [cursor=pointer]:
+          - /url: /system/log-op
+      - generic [ref=f25e30]:
+        - heading "业务模块" [level=2] [ref=f25e31]
+        - group [ref=f25e32]:
+          - generic "契约规范" [ref=f25e33] [cursor=pointer]
+        - group [ref=f25e36]:
+          - generic "底座能力" [ref=f25e37] [cursor=pointer]
+        - group [ref=f25e40]:
+          - generic "仪表盘" [ref=f25e41] [cursor=pointer]
+        - group [ref=f25e44]:
+          - generic "系统管理" [ref=f25e45] [cursor=pointer]
+  - generic [ref=f25e48]:
+    - banner [ref=f25e49]:
+      - generic [ref=f25e50]: 日志
+    - main [ref=f25e51]:
+      - generic [ref=f25e52]:
+        - generic [ref=f25e53]:
+          - heading "操作日志" [level=2] [ref=f25e54]
+          - paragraph [ref=f25e55]: 记录模块、动作与业务对象标识
+        - generic [ref=f25e56]:
+          - heading "操作动态概览" [level=3] [ref=f25e57]
+          - generic [ref=f25e58]:
+            - generic [ref=f25e59]:
+              - generic [ref=f25e60]: 当前页日志
+              - generic [ref=f25e61]: "1"
+            - generic [ref=f25e62]:
+              - generic [ref=f25e63]: 涉及模块
+              - generic [ref=f25e64]: "1"
+          - generic [ref=f25e65]:
+            - generic [ref=f25e66]:
+              - heading "模块分布" [level=3] [ref=f25e67]
+              - generic [ref=f25e68]: 132 · 1
+            - generic [ref=f25e70]:
+              - heading "最近操作" [level=3] [ref=f25e71]
+              - generic [ref=f25e72]: 132 · 123 · 1231 2026-11-21T14:58:24.000Z
+        - generic [ref=f25e74]:
+          - generic [ref=f25e75]:
+            - button "新增" [ref=f25e76] [cursor=pointer]
+            - button "刷新" [ref=f25e78] [cursor=pointer]
+          - generic [ref=f25e81]:
+            - table [ref=f25e83]:
+              - rowgroup [ref=f25e91]:
+                - row [ref=f25e92]:
+                  - columnheader "日志编号" [ref=f25e93]
+                  - columnheader "模块名" [ref=f25e95]
+                  - columnheader "动作名" [ref=f25e97]
+                  - columnheader "业务标识" [ref=f25e99]
+                  - columnheader "状态" [ref=f25e101]
+                  - columnheader "操作" [ref=f25e103]
+            - table [ref=f25e109]:
+              - rowgroup [ref=f25e117]:
+                - row [ref=f25e118]:
+                  - cell "1231" [ref=f25e119]
+                  - cell "132" [ref=f25e121]
+                  - cell "123" [ref=f25e123]
+                  - cell "123" [ref=f25e125]
+                  - cell "已提交" [ref=f25e127]
+                  - cell [ref=f25e129]:
+                    - generic [ref=f25e130]:
+                      - button "编辑" [ref=f25e131] [cursor=pointer]
+                      - button "审核" [ref=f25e133] [cursor=pointer]
+                      - button "作废" [ref=f25e135] [cursor=pointer]
+                      - button "删除" [ref=f25e137] [cursor=pointer]
+          - generic [ref=f25e141]:
+            - generic [ref=f25e142]: Total 1
+            - generic [ref=f25e145] [cursor=pointer]:
+              - generic:
+                - combobox [ref=f25e147]
+                - generic [ref=f25e148]: 20/page
+            - button "Go to previous page" [disabled] [ref=f25e153]
+            - list [ref=f25e154]:
+              - listitem "page 1" [ref=f25e155]: "1"
+            - button "Go to next page" [disabled] [ref=f25e156]

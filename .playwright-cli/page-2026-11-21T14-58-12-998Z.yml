@@ -1,0 +1,65 @@
+- generic [ref=f20e3]:
+  - complementary [ref=f20e4]:
+    - generic [ref=f20e5]: LEAIerp
+    - navigation "主导航" [ref=f20e6]:
+      - generic [ref=f20e7]:
+        - heading "基础模块" [level=2] [ref=f20e8]
+        - link "Dashboard" [ref=f20e9] [cursor=pointer]:
+          - /url: /dashboard/board
+        - link "用户" [ref=f20e12] [cursor=pointer]:
+          - /url: /system/user
+        - link "部门" [ref=f20e15] [cursor=pointer]:
+          - /url: /system/dept
+        - link "角色" [ref=f20e18] [cursor=pointer]:
+          - /url: /system/role
+        - link "权限" [ref=f20e21] [cursor=pointer]:
+          - /url: /system/perm
+        - link "字典" [ref=f20e24] [cursor=pointer]:
+          - /url: /system/dict
+        - link "日志" [ref=f20e27] [cursor=pointer]:
+          - /url: /system/log-op
+      - generic [ref=f20e30]:
+        - heading "业务模块" [level=2] [ref=f20e31]
+        - group [ref=f20e32]:
+          - generic "契约规范" [ref=f20e33] [cursor=pointer]
+        - group [ref=f20e36]:
+          - generic "底座能力" [ref=f20e37] [cursor=pointer]
+        - group [ref=f20e40]:
+          - generic "仪表盘" [ref=f20e41] [cursor=pointer]
+        - group [ref=f20e44]:
+          - generic "系统管理" [ref=f20e45] [cursor=pointer]
+  - generic [ref=f20e48]:
+    - banner [ref=f20e49]:
+      - generic [ref=f20e50]: 用户
+    - main [ref=f20e51]:
+      - generic [ref=f20e52]:
+        - generic [ref=f20e53]:
+          - heading "用户" [level=2] [ref=f20e54]
+          - paragraph [ref=f20e55]: 维护登录账号、实名与所属部门
+        - generic [ref=f20e56]:
+          - heading "账号概览" [level=3] [ref=f20e57]
+          - generic [ref=f20e58]:
+            - generic [ref=f20e59]:
+              - generic [ref=f20e60]: 账号总数
+              - generic [ref=f20e61]: "0"
+            - generic [ref=f20e62]:
+              - generic [ref=f20e63]: 已登记实名
+              - generic [ref=f20e64]: "0"
+            - generic [ref=f20e65]:
+              - generic [ref=f20e66]: 覆盖部门
+              - generic [ref=f20e67]: "0"
+            - generic [ref=f20e68]:
+              - generic [ref=f20e69]: 手机号格式正确
+              - generic [ref=f20e70]: "0"
+          - generic [ref=f20e71]:
+            - generic [ref=f20e72]:
+              - heading "部门人数分布" [level=3] [ref=f20e73]
+              - generic [ref=f20e74]: 暂无账号数据
+            - generic [ref=f20e76]:
+              - heading "资料完整度" [level=3] [ref=f20e77]
+              - paragraph [ref=f20e78]: 实名完整 0/0，手机号格式正确 0。统计基于当前页数据。
+        - generic [ref=f20e79]:
+          - generic [ref=f20e80]:
+            - button "新增" [ref=f20e81] [cursor=pointer]
+            - button "刷新" [ref=f20e83] [cursor=pointer]
+          - status "加载中" [ref=f20e85]: 加载中…

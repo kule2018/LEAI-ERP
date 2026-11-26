@@ -1,0 +1,65 @@
+- generic [ref=f27e3]:
+  - complementary [ref=f27e4]:
+    - generic [ref=f27e5]: LEAIerp
+    - navigation "主导航" [ref=f27e6]:
+      - generic [ref=f27e7]:
+        - heading "基础模块" [level=2] [ref=f27e8]
+        - link "Dashboard" [ref=f27e9] [cursor=pointer]:
+          - /url: /dashboard/board
+        - link "用户" [ref=f27e12] [cursor=pointer]:
+          - /url: /system/user
+        - link "部门" [ref=f27e15] [cursor=pointer]:
+          - /url: /system/dept
+        - link "角色" [ref=f27e18] [cursor=pointer]:
+          - /url: /system/role
+        - link "权限" [ref=f27e21] [cursor=pointer]:
+          - /url: /system/perm
+        - link "字典" [ref=f27e24] [cursor=pointer]:
+          - /url: /system/dict
+        - link "日志" [ref=f27e27] [cursor=pointer]:
+          - /url: /system/log-op
+      - generic [ref=f27e30]:
+        - heading "业务模块" [level=2] [ref=f27e31]
+        - group [ref=f27e32]:
+          - generic "契约规范" [ref=f27e33] [cursor=pointer]
+        - group [ref=f27e36]:
+          - generic "底座能力" [ref=f27e37] [cursor=pointer]
+        - group [ref=f27e40]:
+          - generic "仪表盘" [ref=f27e41] [cursor=pointer]
+        - group [ref=f27e44]:
+          - generic "系统管理" [ref=f27e45] [cursor=pointer]
+  - generic [ref=f27e48]:
+    - banner [ref=f27e49]:
+      - generic [ref=f27e50]: 用户
+    - main [ref=f27e51]:
+      - generic [ref=f27e52]:
+        - generic [ref=f27e53]:
+          - heading "用户" [level=2] [ref=f27e54]
+          - paragraph [ref=f27e55]: 维护登录账号、实名与所属部门
+        - generic [ref=f27e56]:
+          - heading "账号概览" [level=3] [ref=f27e57]
+          - generic [ref=f27e58]:
+            - generic [ref=f27e59]:
+              - generic [ref=f27e60]: 账号总数
+              - generic [ref=f27e61]: "0"
+            - generic [ref=f27e62]:
+              - generic [ref=f27e63]: 已登记实名
+              - generic [ref=f27e64]: "0"
+            - generic [ref=f27e65]:
+              - generic [ref=f27e66]: 覆盖部门
+              - generic [ref=f27e67]: "0"
+            - generic [ref=f27e68]:
+              - generic [ref=f27e69]: 手机号格式正确
+              - generic [ref=f27e70]: "0"
+          - generic [ref=f27e71]:
+            - generic [ref=f27e72]:
+              - heading "部门人数分布" [level=3] [ref=f27e73]
+              - generic [ref=f27e74]: 暂无账号数据
+            - generic [ref=f27e76]:
+              - heading "资料完整度" [level=3] [ref=f27e77]
+              - paragraph [ref=f27e78]: 实名完整 0/0，手机号格式正确 0。统计基于当前页数据。
+        - generic [ref=f27e79]:
+          - generic [ref=f27e80]:
+            - button "新增" [ref=f27e81] [cursor=pointer]
+            - button "刷新" [ref=f27e83] [cursor=pointer]
+          - status "加载中" [ref=f27e85]: 加载中…

@@ -1,0 +1,97 @@
+- generic [ref=f17e3]:
+  - complementary [ref=f17e4]:
+    - generic [ref=f17e5]: LEAIerp
+    - navigation "主导航" [ref=f17e6]:
+      - generic [ref=f17e7]:
+        - heading "基础模块" [level=2] [ref=f17e8]
+        - link "Dashboard" [ref=f17e9] [cursor=pointer]:
+          - /url: /dashboard/board
+        - link "用户" [ref=f17e12] [cursor=pointer]:
+          - /url: /system/user
+        - link "部门" [ref=f17e15] [cursor=pointer]:
+          - /url: /system/dept
+        - link "角色" [ref=f17e18] [cursor=pointer]:
+          - /url: /system/role
+        - link "权限" [ref=f17e21] [cursor=pointer]:
+          - /url: /system/perm
+        - link "字典" [ref=f17e24] [cursor=pointer]:
+          - /url: /system/dict
+        - link "日志" [ref=f17e27] [cursor=pointer]:
+          - /url: /system/log-op
+      - generic [ref=f17e30]:
+        - heading "业务模块" [level=2] [ref=f17e31]
+        - group [ref=f17e32]:
+          - generic "契约规范" [ref=f17e33] [cursor=pointer]
+        - group [ref=f17e36]:
+          - generic "底座能力" [ref=f17e37] [cursor=pointer]
+        - group [ref=f17e40]:
+          - generic "仪表盘" [ref=f17e41] [cursor=pointer]
+        - group [ref=f17e44]:
+          - generic "系统管理" [ref=f17e45] [cursor=pointer]
+          - link "公司" [ref=f17e48] [cursor=pointer]:
+            - /url: /system/company
+          - link "组织树" [ref=f17e50] [cursor=pointer]:
+            - /url: /system/org-tree
+          - link "岗位" [ref=f17e52] [cursor=pointer]:
+            - /url: /system/position
+          - link "数据权限" [ref=f17e54] [cursor=pointer]:
+            - /url: /system/datascope
+          - link "登录/刷新Token" [ref=f17e56] [cursor=pointer]:
+            - /url: /system/auth
+          - link "SSO" [ref=f17e58] [cursor=pointer]:
+            - /url: /system/sso
+          - link "MFA" [ref=f17e60] [cursor=pointer]:
+            - /url: /system/mfa
+          - link "登录风控" [ref=f17e62] [cursor=pointer]:
+            - /url: /system/login-risk
+          - link "编码规则" [ref=f17e64] [cursor=pointer]:
+            - /url: /system/seq-rule
+          - link "单据编号" [ref=f17e66] [cursor=pointer]:
+            - /url: /system/bill-no
+          - link "系统参数" [ref=f17e68] [cursor=pointer]:
+            - /url: /system/param
+          - link "语言包" [ref=f17e70] [cursor=pointer]:
+            - /url: /system/lang
+          - link "币种" [ref=f17e72] [cursor=pointer]:
+            - /url: /system/currency
+          - link "汇率" [ref=f17e74] [cursor=pointer]:
+            - /url: /system/rate
+          - link "登录日志" [ref=f17e76] [cursor=pointer]:
+            - /url: /system/log-login
+          - link "变更日志" [ref=f17e78] [cursor=pointer]:
+            - /url: /system/log-change
+          - link "通知中心" [ref=f17e80] [cursor=pointer]:
+            - /url: /system/notify
+          - link "文件存储" [ref=f17e82] [cursor=pointer]:
+            - /url: /system/file
+          - link "定时任务" [ref=f17e84] [cursor=pointer]:
+            - /url: /system/job
+          - link "执行日志" [ref=f17e86] [cursor=pointer]:
+            - /url: /system/job-log
+          - link "OpenAPI" [ref=f17e88] [cursor=pointer]:
+            - /url: /system/openapi
+          - link "API Key" [ref=f17e90] [cursor=pointer]:
+            - /url: /system/apikey
+          - link "Webhook" [ref=f17e92] [cursor=pointer]:
+            - /url: /system/webhook
+          - link "第三方配置" [ref=f17e94] [cursor=pointer]:
+            - /url: /system/third
+          - link "备份策略" [ref=f17e96] [cursor=pointer]:
+            - /url: /system/backup
+          - link "恢复" [ref=f17e98] [cursor=pointer]:
+            - /url: /system/restore
+          - link "系统监控" [ref=f17e100] [cursor=pointer]:
+            - /url: /system/monitor
+  - generic [ref=f17e102]:
+    - banner [ref=f17e103]:
+      - generic [ref=f17e104]: 公司
+    - main [ref=f17e105]:
+      - generic [ref=f17e106]:
+        - generic [ref=f17e107]:
+          - heading "公司" [level=2] [ref=f17e108]
+          - paragraph [ref=f17e109]: 维护租户下属公司主体与统一社会信用代码
+        - generic [ref=f17e110]:
+          - generic [ref=f17e111]:
+            - button "新增" [ref=f17e112] [cursor=pointer]
+            - button "刷新" [ref=f17e114] [cursor=pointer]
+          - status "加载中" [ref=f17e116]: 加载中…

@@ -1,0 +1,62 @@
+- generic [ref=f24e3]:
+  - complementary [ref=f24e4]:
+    - generic [ref=f24e5]: LEAIerp
+    - navigation "主导航" [ref=f24e6]:
+      - generic [ref=f24e7]:
+        - heading "基础模块" [level=2] [ref=f24e8]
+        - link "Dashboard" [ref=f24e9] [cursor=pointer]:
+          - /url: /dashboard/board
+        - link "用户" [ref=f24e12] [cursor=pointer]:
+          - /url: /system/user
+        - link "部门" [ref=f24e15] [cursor=pointer]:
+          - /url: /system/dept
+        - link "角色" [ref=f24e18] [cursor=pointer]:
+          - /url: /system/role
+        - link "权限" [ref=f24e21] [cursor=pointer]:
+          - /url: /system/perm
+        - link "字典" [ref=f24e24] [cursor=pointer]:
+          - /url: /system/dict
+        - link "日志" [ref=f24e27] [cursor=pointer]:
+          - /url: /system/log-op
+      - generic [ref=f24e30]:
+        - heading "业务模块" [level=2] [ref=f24e31]
+        - group [ref=f24e32]:
+          - generic "契约规范" [ref=f24e33] [cursor=pointer]
+        - group [ref=f24e36]:
+          - generic "底座能力" [ref=f24e37] [cursor=pointer]
+        - group [ref=f24e40]:
+          - generic "仪表盘" [ref=f24e41] [cursor=pointer]
+        - group [ref=f24e44]:
+          - generic "系统管理" [ref=f24e45] [cursor=pointer]
+  - generic [ref=f24e48]:
+    - banner [ref=f24e49]:
+      - generic [ref=f24e50]: 字典
+    - main [ref=f24e51]:
+      - generic [ref=f24e52]:
+        - generic [ref=f24e53]:
+          - heading "字典" [level=2] [ref=f24e54]
+          - paragraph [ref=f24e55]: "维护字典项与 dict:{type} 缓存口径"
+        - generic [ref=f24e56]:
+          - heading "字典缓存概览" [level=3] [ref=f24e57]
+          - generic [ref=f24e58]:
+            - generic [ref=f24e59]:
+              - generic [ref=f24e60]: 字典项总数
+              - generic [ref=f24e61]: "0"
+            - generic [ref=f24e62]:
+              - generic [ref=f24e63]: 字典类型
+              - generic [ref=f24e64]: "0"
+            - generic [ref=f24e65]:
+              - generic [ref=f24e66]: 平均缓存秒数
+              - generic [ref=f24e67]: "0"
+          - generic [ref=f24e68]:
+            - generic [ref=f24e69]:
+              - heading "字典类型分布" [level=3] [ref=f24e70]
+              - generic [ref=f24e71]: 暂无字典数据
+            - generic [ref=f24e73]:
+              - heading "缓存键规则" [level=3] [ref=f24e74]
+              - paragraph [ref=f24e75]: "按 dict:{type} 缓存字典项集合，TTL 取字典项配置值；新增或修改字典后需要删除对应类型缓存。"
+        - generic [ref=f24e76]:
+          - generic [ref=f24e77]:
+            - button "新增" [ref=f24e78] [cursor=pointer]
+            - button "刷新" [ref=f24e80] [cursor=pointer]
+          - status "加载中" [ref=f24e82]: 加载中…

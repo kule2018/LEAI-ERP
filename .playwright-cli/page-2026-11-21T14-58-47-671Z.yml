@@ -1,0 +1,34 @@
+- generic [ref=f22e3]:
+  - complementary [ref=f22e4]:
+    - generic [ref=f22e5]: LEAIerp
+    - navigation "主导航" [ref=f22e6]:
+      - generic [ref=f22e7]:
+        - heading "基础模块" [level=2] [ref=f22e8]
+        - link "Dashboard" [ref=f22e9] [cursor=pointer]:
+          - /url: /dashboard/board
+        - link "用户" [ref=f22e12] [cursor=pointer]:
+          - /url: /system/user
+        - link "部门" [ref=f22e15] [cursor=pointer]:
+          - /url: /system/dept
+        - link "角色" [ref=f22e18] [cursor=pointer]:
+          - /url: /system/role
+        - link "权限" [ref=f22e21] [cursor=pointer]:
+          - /url: /system/perm
+        - link "字典" [ref=f22e24] [cursor=pointer]:
+          - /url: /system/dict
+        - link "日志" [ref=f22e27] [cursor=pointer]:
+          - /url: /system/log-op
+      - generic [ref=f22e30]:
+        - heading "业务模块" [level=2] [ref=f22e31]
+        - group [ref=f22e32]:
+          - generic "契约规范" [ref=f22e33] [cursor=pointer]
+        - group [ref=f22e36]:
+          - generic "底座能力" [ref=f22e37] [cursor=pointer]
+        - group [ref=f22e40]:
+          - generic "仪表盘" [ref=f22e41] [cursor=pointer]
+        - group [ref=f22e44]:
+          - generic "系统管理" [ref=f22e45] [cursor=pointer]
+  - generic [ref=f22e48]:
+    - banner [ref=f22e49]:
+      - generic [ref=f22e50]: /
+    - main

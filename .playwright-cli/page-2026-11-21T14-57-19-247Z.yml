@@ -1,0 +1,62 @@
+- generic [ref=f19e3]:
+  - complementary [ref=f19e4]:
+    - generic [ref=f19e5]: LEAIerp
+    - navigation "主导航" [ref=f19e6]:
+      - generic [ref=f19e7]:
+        - heading "基础模块" [level=2] [ref=f19e8]
+        - link "Dashboard" [ref=f19e9] [cursor=pointer]:
+          - /url: /dashboard/board
+        - link "用户" [ref=f19e12] [cursor=pointer]:
+          - /url: /system/user
+        - link "部门" [ref=f19e15] [cursor=pointer]:
+          - /url: /system/dept
+        - link "角色" [ref=f19e18] [cursor=pointer]:
+          - /url: /system/role
+        - link "权限" [ref=f19e21] [cursor=pointer]:
+          - /url: /system/perm
+        - link "字典" [ref=f19e24] [cursor=pointer]:
+          - /url: /system/dict
+        - link "日志" [ref=f19e27] [cursor=pointer]:
+          - /url: /system/log-op
+      - generic [ref=f19e30]:
+        - heading "业务模块" [level=2] [ref=f19e31]
+        - group [ref=f19e32]:
+          - generic "契约规范" [ref=f19e33] [cursor=pointer]
+        - group [ref=f19e36]:
+          - generic "底座能力" [ref=f19e37] [cursor=pointer]
+        - group [ref=f19e40]:
+          - generic "仪表盘" [ref=f19e41] [cursor=pointer]
+        - group [ref=f19e44]:
+          - generic "系统管理" [ref=f19e45] [cursor=pointer]
+  - generic [ref=f19e48]:
+    - banner [ref=f19e49]:
+      - generic [ref=f19e50]: Dashboard
+    - main [ref=f19e51]:
+      - generic [ref=f19e52]:
+        - generic [ref=f19e53]:
+          - heading "销售/采购/库存看板" [level=2] [ref=f19e54]
+          - paragraph [ref=f19e55]: 按漏斗阶段展示排行、ABC 分类与库存周转趋势
+        - generic [ref=f19e56]:
+          - heading "经营概览" [level=3] [ref=f19e57]
+          - generic [ref=f19e58]:
+            - generic [ref=f19e59]:
+              - generic [ref=f19e60]: 看板记录
+              - generic [ref=f19e61]: "0"
+            - generic [ref=f19e62]:
+              - generic [ref=f19e63]: 平均周转天数
+              - generic [ref=f19e64]: "0.00"
+            - generic [ref=f19e65]:
+              - generic [ref=f19e66]: 安全库存告警
+              - generic [ref=f19e67]: "0"
+            - generic [ref=f19e68]:
+              - generic [ref=f19e69]: A 类物料 / 阶段数
+              - generic [ref=f19e70]: 0 / 0
+        - generic [ref=f19e71]:
+          - generic [ref=f19e72]:
+            - button "AI 建议" [disabled] [ref=f19e73]
+            - button "新增" [ref=f19e75] [cursor=pointer]
+            - button "刷新" [ref=f19e77] [cursor=pointer]
+          - status "加载中" [ref=f19e79]: 加载中…
+        - generic [ref=f19e80]:
+          - heading "各阶段周转天数" [level=3] [ref=f19e81]
+          - generic [ref=f19e82]: 暂无数据

@@ -1,0 +1,24 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e4]:
+    - heading "LEAI ERP" [level=1] [ref=f3e5]
+    - paragraph [ref=f3e6]: 企业一体化管理平台
+    - generic [ref=f3e7]:
+      - generic [ref=f3e8]: 租户编码
+      - textbox "租户编码" [ref=f3e11]:
+        - /placeholder: default
+        - text: default
+    - generic [ref=f3e12]:
+      - generic [ref=f3e13]: 登录账号
+      - textbox "登录账号" [ref=f3e16]:
+        - /placeholder: 请输入账号
+        - text: admin
+    - generic [ref=f3e17]:
+      - generic [ref=f3e18]: 密码
+      - generic [ref=f3e20]:
+        - textbox "密码" [ref=f3e21]:
+          - /placeholder: 请输入密码
+          - text: Admin@123456
+        - generic [ref=f3e23] [cursor=pointer]
+    - button "登录" [ref=f3e27] [cursor=pointer]
+  - alert [ref=f3e29]:
+    - paragraph [ref=f3e33]: Request failed with status code 500

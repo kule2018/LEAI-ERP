@@ -1,0 +1,21 @@
+- generic [ref=e4]:
+  - heading "LEAI ERP" [level=1] [ref=e5]
+  - paragraph [ref=e6]: 企业一体化管理平台
+  - generic [ref=e7]:
+    - generic [ref=e8]: 租户编码
+    - textbox "租户编码" [ref=e11]:
+      - /placeholder: default
+      - text: default
+  - generic [ref=e12]:
+    - generic [ref=e13]: 登录账号
+    - textbox "登录账号" [ref=e16]:
+      - /placeholder: 请输入账号
+      - text: admin
+  - generic [ref=e17]:
+    - generic [ref=e18]: 密码
+    - generic [ref=e20]:
+      - textbox "密码" [ref=e21]:
+        - /placeholder: 请输入密码
+        - text: Admin@123456
+      - generic [ref=e23] [cursor=pointer]
+  - button "登录" [ref=e27] [cursor=pointer]

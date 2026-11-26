@@ -1,0 +1,33 @@
+{
+  "title": "LEAI ERP Runtime",
+  "uid": "leaierp-runtime",
+  "schemaVersion": 39,
+  "tags": ["leaierp"],
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "HTTP 请求速率",
+      "targets": [{ "expr": "rate(leaierp_requests_total[1m])", "legendFormat": "requests/s" }],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 }
+    },
+    {
+      "type": "timeseries",
+      "title": "HTTP 错误速率",
+      "targets": [{ "expr": "rate(leaierp_errors_total[1m])", "legendFormat": "errors/s" }],
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 }
+    },
+    {
+      "type": "timeseries",
+      "title": "慢请求",
+      "targets": [{ "expr": "rate(leaierp_slow_requests_total[1m])", "legendFormat": "slow/s" }],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 }
+    },
+    {
+      "type": "timeseries",
+      "title": "进程内存",
+      "targets": [{ "expr": "leaierp_process_memory_bytes", "legendFormat": "{{type}}" }],
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 }
+    }
+  ],
+  "templating": { "list": [] }
+}

@@ -1,0 +1,102 @@
+version: '3.9'
+
+# 高可用部署叠加层：MySQL 主从 + Redis 哨兵 + MinIO + 多实例 API + Nginx
+# 使用：docker compose -f docker-compose.yml -f docker-compose.ha.yml up -d
+
+x-server-env: &server-env
+  NODE_ENV: production
+  DB_HOST: mysql-master
+  DB_PORT: 3306
+  DB_USERNAME: root
+  DB_PASSWORD: ${DB_PASSWORD:-leaierp_dev}
+  DB_DATABASE: leaierp
+  REDIS_HOST: redis-sentinel
+  REDIS_PORT: 26379
+  JWT_SECRET: ${JWT_SECRET:-change_me}
+  STORAGE_DRIVER: S3
+  S3_ENDPOINT: http://minio:9000/{bucket}
+  S3_BUCKET: leaierp
+  S3_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
+  S3_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin}
+  SENTRY_DSN: ${SENTRY_DSN:-}
+  LOG_LEVEL: info
+
+services:
+  mysql-master:
+    image: mysql:8.0
+    command: --server-id=1 --log-bin=mysql-bin --binlog-format=ROW --sync-binlog=1
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-leaierp_dev}
+      MYSQL_DATABASE: leaierp
+    volumes:
+      - mysql-master-data:/var/lib/mysql
+      - ${BACKUP_DIR:-./backups}/binlog:/var/log/mysql
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      interval: 10s
+      retries: 10
+
+  mysql-slave:
+    image: mysql:8.0
+    command: --server-id=2 --relay-log=relay-bin --read-only=1
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-leaierp_dev}
+      MYSQL_DATABASE: leaierp
+      MYSQL_MASTER_HOST: mysql-master
+      MYSQL_MASTER_USER: root
+      MYSQL_MASTER_PASSWORD: ${DB_PASSWORD:-leaierp_dev}
+    volumes:
+      - mysql-slave-data:/var/lib/mysql
+    depends_on:
+      mysql-master:
+        condition: service_healthy
+
+  redis-master:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-master-data:/data
+
+  redis-replica:
+    image: redis:7-alpine
+    command: redis-server --replicaof redis-master 6379 --appendonly yes
+    depends_on: [redis-master]
+
+  redis-sentinel:
+    image: redis:7-alpine
+    command: redis-sentinel /etc/redis/sentinel.conf
+    ports: ['26379:26379']
+    volumes:
+      - ./deploy/redis/sentinel.conf:/etc/redis/sentinel.conf:ro
+    depends_on: [redis-master, redis-replica]
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    ports: ['9000:9000', '9001:9001']
+    volumes:
+      - minio-data:/data
+      - ${OFFSITE_BACKUP_DIR:-./backups/offsite}:/offsite
+
+  server:
+    environment: *server-env
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: any
+
+  nginx:
+    image: nginx:alpine
+    ports: ['80:80', '443:443']
+    volumes:
+      - ./deploy/nginx/leaiierp.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [server]
+
+volumes:
+  mysql-master-data:
+  mysql-slave-data:
+  redis-master-data:
+  minio-data:

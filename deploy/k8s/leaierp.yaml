@@ -1,0 +1,86 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: leaierp-config
+data:
+  NODE_ENV: "production"
+  PORT: "3000"
+  STORAGE_DRIVER: "S3"
+  S3_ENDPOINT: "http://minio:9000/{bucket}"
+  S3_BUCKET: "leaierp"
+  RATE_LIMIT_WINDOW_MS: "60000"
+  RATE_LIMIT_MAX: "300"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: leaierp-api
+  labels:
+    app: leaierp-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: leaierp-api
+  template:
+    metadata:
+      labels:
+        app: leaierp-api
+    spec:
+      containers:
+        - name: api
+          image: leaierp/server:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: leaierp-config
+          env:
+            - name: DB_HOST
+              valueFrom: { secretKeyRef: { name: leaierp-secrets, key: DB_HOST } }
+            - name: JWT_SECRET
+              valueFrom: { secretKeyRef: { name: leaierp-secrets, key: JWT_SECRET } }
+            - name: S3_ACCESS_KEY
+              valueFrom: { secretKeyRef: { name: leaierp-secrets, key: S3_ACCESS_KEY } }
+            - name: S3_SECRET_KEY
+              valueFrom: { secretKeyRef: { name: leaierp-secrets, key: S3_SECRET_KEY } }
+          readinessProbe:
+            httpGet: { path: /api/v1/health, port: 3000 }
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: { path: /api/v1/health, port: 3000 }
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests: { cpu: "250m", memory: "256Mi" }
+            limits: { cpu: "1000m", memory: "768Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: leaierp-api
+spec:
+  selector:
+    app: leaierp-api
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: leaierp-api
+spec:
+  rules:
+    - host: erp.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: leaierp-api
+                port:
+                  number: 80

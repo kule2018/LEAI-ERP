@@ -1,0 +1,31 @@
+{
+  "name": "leaierp",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.12.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "pnpm --filter @leaierp/web dev",
+    "dev:server": "pnpm --filter @leaierp/server start:dev",
+    "build:web": "pnpm --filter @leaierp/web build",
+    "build:server": "pnpm --filter @leaierp/server build",
+    "typecheck:web": "pnpm --filter @leaierp/web typecheck",
+    "typecheck:server": "pnpm --filter @leaierp/server typecheck",
+    "typecheck": "pnpm run typecheck:server && pnpm run typecheck:web",
+    "test": "node apps/server/node_modules/typescript/bin/tsc -p apps/server/tsconfig.json && node --test tests/password.test.mjs tests/crypto.test.mjs tests/contracts.test.mjs tests/domain-event.test.mjs tests/sales-flow.test.mjs tests/print-pdf.test.mjs tests/state-machine.test.mjs tests/metrics.test.mjs tests/data-scope.test.mjs tests/csv-import.test.mjs tests/approval.test.mjs tests/ai-draft-apply.test.mjs tests/flow-biz-callback.test.mjs tests/risk-engine.test.mjs tests/business-rules.test.mjs tests/business-closure.test.mjs tests/production-rules.test.mjs tests/finance-quality-rules.test.mjs tests/finance-redline-rules.test.mjs tests/backup-policy-rules.test.mjs tests/bank-crm-rules.test.mjs tests/finance-closure-rules.test.mjs tests/finance-depreciation-completeness.test.mjs tests/finance-report-drilldown.test.mjs tests/finance-tax-rules.test.mjs tests/mrp-purchase-p1.test.mjs tests/finance-ledger-rules.test.mjs tests/bank-connection-rules.test.mjs tests/inventory-costing-report-rules.test.mjs tests/asset-cost-rules.test.mjs tests/notify-scheduler.test.mjs tests/procurement-rules.test.mjs tests/condition-engine.test.mjs tests/currency-engine.test.mjs tests/workbench-engine.test.mjs tests/shop-promotion-engine.test.mjs tests/shop-reconcile-engine.test.mjs tests/export-guard-engine.test.mjs tests/role-inherit-engine.test.mjs tests/print-template-engine.test.mjs tests/ai-extension-engine.test.mjs tests/shop-service-engine.test.mjs tests/business-extension-engine.test.mjs tests/hr-extension-engine.test.mjs tests/sales-extension-engine.test.mjs tests/purchase-extension-engine.test.mjs tests/inventory-extension-engine.test.mjs tests/manufacturing-extension-engine.test.mjs tests/finance-extension-engine.test.mjs tests/platform-guard-engine.test.mjs tests/ops-extension-engine.test.mjs tests/project-ops-engine.test.mjs tests/hr-approval-engine.test.mjs tests/product-unit-engine.test.mjs tests/inventory-alert-engine.test.mjs tests/purchase-portal-rules.test.mjs tests/io-header-mapping.test.mjs tests/sales-pricing-rules.test.mjs tests/sales-contract-engine.test.mjs tests/sales-delivery-engine.test.mjs tests/ai-forecast-engine.test.mjs tests/supplier-portal-rules.test.mjs tests/idempotency-rules.test.mjs tests/flow-monitor-engine.test.mjs tests/finance-period-rules.test.mjs tests/stock-adjustment-rules.test.mjs tests/sales-crm-extension-rules.test.mjs tests/scheduling-changeover-rules.test.mjs tests/labor-contract-rules.test.mjs tests/cost-recalculation-rules.test.mjs tests/cashflow-rolling-forecast-rules.test.mjs tests/stocktake-approval-rules.test.mjs tests/i18n-language-rules.test.mjs tests/stock-io-engine.test.mjs tests/sensitive-field-rules.test.mjs tests/customization-rules.test.mjs",
+    "migrate": "node scripts/migrate.mjs",
+    "backup:db": "node scripts/backup.mjs",
+    "backup:binlog": "node scripts/backup-binlog.mjs",
+    "restore:db": "node scripts/restore.mjs",
+    "deploy:pm2": "pm2 start ecosystem.config.cjs",
+    "deploy:k8s": "kubectl apply -f deploy/k8s/leaierp.yaml",
+    "stress:inventory": "node scripts/stress-inventory.mjs",
+    "audit:project": "node scripts/audit-project.mjs",
+    "verify": "node apps/server/node_modules/typescript/bin/tsc -p apps/server/tsconfig.json --noEmit && npm run typecheck --prefix apps/web && npm test && npm run audit:project",
+    "deploy:up": "docker compose up -d --build",
+    "deploy:down": "docker compose down",
+    "pages:generate": "node scripts/generate-m00-pages.mjs"
+  }
+}

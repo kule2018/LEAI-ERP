@@ -1,0 +1,32 @@
+-- AI 补货建议落库：预测结果需人工确认后写回业务单据（采购需求）
+
+CREATE TABLE IF NOT EXISTS `ai_forecast_suggestion` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `tenant_id` BIGINT NOT NULL,
+  `product_id` BIGINT NOT NULL DEFAULT 0 COMMENT '产品ID',
+  `model` VARCHAR(60) NOT NULL COMMENT '模型/算法标识',
+  `avg_qty` DECIMAL(18,3) NOT NULL DEFAULT 0 COMMENT '月均销量',
+  `trend_rate` DECIMAL(9,4) NOT NULL DEFAULT 0 COMMENT '趋势率',
+  `available_qty` DECIMAL(18,3) NOT NULL DEFAULT 0 COMMENT '可用量',
+  `suggest_qty` DECIMAL(18,3) NOT NULL DEFAULT 0 COMMENT '建议补货量',
+  `confirm_qty` DECIMAL(18,3) NOT NULL DEFAULT 0 COMMENT '人工确认补货量',
+  `cover_days` DECIMAL(10,1) NOT NULL DEFAULT 0 COMMENT '可用量可覆盖天数',
+  `level` VARCHAR(24) NOT NULL DEFAULT 'NORMAL' COMMENT '紧急度 LOW/NORMAL/HIGH/URGENT',
+  `confidence` DECIMAL(5,4) NOT NULL DEFAULT 0 COMMENT '置信度',
+  `mape` DECIMAL(8,2) NOT NULL DEFAULT 0 COMMENT '平均绝对百分比误差',
+  `accuracy` DECIMAL(5,4) NOT NULL DEFAULT 0 COMMENT '历史准确率',
+  `status` VARCHAR(24) NOT NULL DEFAULT 'PENDING' COMMENT 'PENDING/CONFIRMED/REJECTED',
+  `applied_biz_type` VARCHAR(40) NULL COMMENT '写回单据类型',
+  `applied_biz_id` BIGINT NULL COMMENT '写回单据ID',
+  `reject_reason` VARCHAR(500) NULL COMMENT '拒绝原因',
+  `reason` VARCHAR(500) NULL COMMENT '建议说明',
+  `evidence_json` JSON NULL COMMENT '计算依据',
+  `task_id` BIGINT NULL COMMENT '关联AI任务ID',
+  `confirmed_by` BIGINT NULL,
+  `confirmed_at` DATETIME(3) NULL,
+  `created_by` BIGINT NULL,
+  `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+  PRIMARY KEY (`id`),
+  KEY `idx_ai_forecast_suggestion` (`tenant_id`, `status`),
+  KEY `idx_ai_forecast_suggestion_product` (`tenant_id`, `product_id`)
+) ENGINE = InnoDB COMMENT 'AI补货建议';
